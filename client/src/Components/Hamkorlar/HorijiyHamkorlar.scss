@@ -1,0 +1,117 @@
+$firstly: #002147;
+.horijiy-hamkorlar {
+  background: #002147;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .boshqarmalar-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .title {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      // width: 100%;
+      justify-content: space-between;
+
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Open Sans", sans-serif;
+        // line-height: 41px;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: #fff;
+        font-size: 36px;
+        @media only screen and (min-width: 200px) and (max-width: 480px) {
+          font-size: 24px;
+        }
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #fff;
+        transition: 0.3s;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .boshqarmalar-body {
+    padding: 0 2rem;
+    .card-col {
+      display: flex;
+      align-items: center;
+      // gap: 2rem;
+      color: #fff;
+      align-items: center;
+      border-radius: 7px;
+      // background: #0a2357;
+      margin: 2rem;
+      // height: 200px;
+      user-select: none;
+      height: 100px;
+      // width: 400px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #223567;
+      transition: all 0.3s ease-in-out;
+      background-image: linear-gradient(to right, #1e3264, #021851);
+      &:hover {
+        box-shadow: 0 5px 25px rgba(255, 255, 255, 0.122);
+        color: aqua;
+      }
+      .text-container {
+        border-radius: 7px;
+        height: 100%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+        // -webkit-line-clamp: 1;
+        // font-weight: 500 !important;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+
+        // opacity: 0;
+        padding: 10px;
+        p {
+          font-family: "PT Sans", sans-serif;
+
+          letter-spacing: 2px;
+          border-radius: 7px;
+          margin: 0;
+        }
+      }
+
+      .image-container {
+        // width: 30%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      // &:hover .image-container {
+      //   transform: scale(1);
+      // }
+      // &:hover .text-container {
+      //   opacity: 1;
+      // }
+    }
+  }
+
+  .react-multiple-carousel__arrow--left,
+  .react-multiple-carousel__arrow--right {
+    display: none;
+  }
+}
