@@ -1,12 +1,12 @@
 .Tuzilma {
   width: 100%;
-  background: #021C52;
+  background: #002147;
 
   .service {
     max-width: 2500px;
-    padding: 0 3%;
+    padding: 3rem 3%;
 
-    background: #021C52;
+    background: #002147;
     margin: 0 auto;
 
     .service_title {
@@ -36,14 +36,13 @@
         transition: 0.3s;
         text-decoration: none;
       }
-
     }
 
     .service_rows {
       display: grid;
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px 12px;
+      gap: 40px 30px;
 
       .service-col {
         position: relative;
@@ -58,18 +57,17 @@
           width: 100%;
           position: absolute;
           height: 210px;
-          background: #0A2357;
+          background-image: linear-gradient(160deg, rgb(39, 61, 115), #03184d);
           text-align: center;
           display: flex;
-          align-items: end;
+          align-items: flex-end;
           border-radius: 10px;
           justify-content: center;
           padding-bottom: 20px;
-
           span {
             bottom: 20px;
             font-size: 25px;
-            color: #FFF;
+            color: #fff;
           }
         }
 
@@ -79,37 +77,33 @@
 
         .icon-container {
           width: 180px;
-          top: -70px;
-          background: linear-gradient(158.71deg,
-              hsla(0, 0%, 100%, 0.24) -100%,
-              hsla(0, 0%, 100%, 0));
-          -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-          position: absolute;
+          // top: -70px;
+          transform: translatey(-50%);
+          // background-color: #081d56;
+          background-image: linear-gradient(158.71deg, #1f3261, #03184d);
+
+          // position: absolute;
           height: 180px;
           display: flex;
           justify-content: center;
           align-items: center;
           font-size: 50px;
-          border: 10px solid #021C52;
-          color: #FFF;
+          border: 10px solid #002147;
+          color: #fff;
           z-index: 5 !important;
           border-radius: 50%;
           cursor: pointer;
 
-          background-color: rgba(255, 255, 255, 0.03);
+          // background-color: rgba(255, 255, 255, 0.03);
 
           &:hover {
             svg {
               transform: scale(1.15);
               transition: all 1.1s;
             }
-
           }
-
         }
       }
-
     }
   }
 }
@@ -133,7 +127,7 @@
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  color: #FFF;
+  color: #fff;
   z-index: 5 !important;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.03);
@@ -169,7 +163,6 @@
           transition: 0.3s;
           text-decoration: none;
         }
-
       }
 
       .service_rows {
@@ -189,7 +182,6 @@
 
           .service-card {
             width: 100%;
-
           }
         }
       }
@@ -254,4 +246,5 @@
 }
 
 // Desktops, large screens (landscape)
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {}
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+}

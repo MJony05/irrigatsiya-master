@@ -24,7 +24,7 @@ $dark: #212529;
   justify-content: center;
   list-style: none;
   backdrop-filter: blur(50px);
-  z-index: 12;
+  z-index: 99999;
   background: rgba($color: #000000, $alpha: 0.2);
   animation-name: slide-down;
   animation-duration: 0.5s;
@@ -58,7 +58,8 @@ $dark: #212529;
     overflow-y: auto;
     justify-content: center;
     width: 100%;
-
+    position: absolute;
+    z-index: -2;
     list-style: none;
   }
 

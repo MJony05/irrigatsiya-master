@@ -27,7 +27,6 @@ const Announcements = () => {
     const formattedDate = `${
       createdAt.getMonth() + 1
     }.${createdAt.getDate()}.${createdAt.getFullYear()}`;
-    console.log(formattedDate);
     return formattedDate;
   }
 

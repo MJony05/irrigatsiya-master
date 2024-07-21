@@ -1,16 +1,11 @@
 import React, { useContext, useState } from "react";
 import "./Slider.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
-import { Carousel, CarouselItem } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import AxiosCall, { BASE_URL } from "../AxiosCall/AxiosCall";
 import { StatesContext } from "../../context/GlobalContext";
 import { useEffect } from "react";
-import Loading from "../Loading/Loading";
-import rightIcon from "../../Images/right-arrow.png";
+
 const Slider = () => {
-  const carouselRef = useRef(null);
   const [slider, setSlider] = useState([]);
   const { lang } = useContext(StatesContext);
   const getSlider = () => {
@@ -22,13 +17,7 @@ const Slider = () => {
   useEffect(() => {
     getSlider();
   }, [lang]);
-  const handlePrevClick = () => {
-    carouselRef.current.prev();
-  };
 
-  const handleNextClick = () => {
-    carouselRef.current.next();
-  };
   const nextIcon = (
     <span className="glyphicon glyphicon-glass">
       <svg
@@ -64,7 +53,6 @@ const Slider = () => {
       </svg>
     </span>
   );
-  console.log(slider);
   return (
     <>
       <Carousel nextIcon={nextIcon} prevIcon={prevIcon} className="carousel">

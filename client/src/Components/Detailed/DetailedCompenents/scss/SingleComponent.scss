@@ -272,13 +272,16 @@
         line-height: 38px;
         margin-bottom: 28px;
         text-align: start;
-        color: #fff;
+        color: #fff !important;
       }
 
       p {
         line-height: 1.7;
         color: #fff;
       }
+    }
+    .text-container {
+      color: #fff !important;
     }
 
     .cards-container {
@@ -312,7 +315,9 @@
 
       .cards2-container {
         display: block;
-
+        height: 100vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
         .cards {
           display: flex;
           flex-direction: column;
@@ -336,9 +341,11 @@
               left: 0;
               border-radius: 6px !important;
               bottom: 0;
-              background: linear-gradient(180deg,
-                  rgba(0, 42, 108, 0.2) 60.06%,
-                  #002a6c 114.94%);
+              background: linear-gradient(
+                180deg,
+                rgba(0, 42, 108, 0.2) 60.06%,
+                #002a6c 114.94%
+              );
               z-index: 1;
             }
 
@@ -628,7 +635,6 @@
     text-align: center;
 
     .carousel {
-
       // height: 100px;
       .banner_item {
         // width: 100%;
@@ -1006,4 +1012,5 @@
 }
 
 // Desktops, large screens (landscape)
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {}
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+}

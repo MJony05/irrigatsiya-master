@@ -27,12 +27,12 @@ const SingleComponent = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const { id } = useParams();
   const { lang } = useContext(StatesContext);
-  const [textContent, setTextContent] = useState('');
+  const [textContent, setTextContent] = useState("");
   // get textContent from string html
   useEffect(() => {
     const parser = new DOMParser();
-    const doc = parser.parseFromString(data?.body, 'text/html');
-    const textContent = doc.body.textContent || '';
+    const doc = parser.parseFromString(data?.body, "text/html");
+    const textContent = doc.body.textContent || "";
     setTextContent(textContent);
   }, [data?.body]);
   const flagInfo = {
@@ -51,7 +51,7 @@ const SingleComponent = () => {
     contentEN: `
     The state flag was approved by the Law of the Republic of Uzbekistan dated November 18, 1991 No. 407XII "On the State Flag of the Republic of Uzbekistan". The State flag of the Republic of Uzbekistan is a rectangular cloth consisting of three parts of dark blue color, white color and dark green color, running along the entire length of the flag. The length of the State flag of the Republic of Uzbekistan is 250 centimeters and the width is 125 centimeters. Blue, white, and green bars have the same width. Each width is 40 centimeters. Red borders with a width of 2.5 centimeters have been drawn from the edges of the white border in the middle of the State flag of the Republic of Uzbekistan. On the front and back side of the upper part of the National Flag of the Republic of Uzbekistan, a white new moon and twelve white five-pointed stars are depicted near the handle. An image of a white new moon and twelve white five-pointed stars is placed in the middle of the blue top width in a rectangle measuring 70x30 centimeters. The white new moon is vertical with its right side facing the handle, placed at a distance of 20 centimeters from the handle, and fits into a circle with a diameter of 30 centimeters. Twelve white five-pointed stars fit into a 6-centimeter diameter circle. The distance between the circles is 6 centimeters. The stars are arranged lengthwise and vertically in the following order: three stars in the top row, four stars in the middle row, and five stars in the bottom row. The stars in the lower row are located at a distance of 3.5 centimeters from the lower end of the new moon.
             `,
-  }
+  };
   const emblemInfo = {
     nameUZ: "O'zbekiston Respublikasi davlat gerbi",
     nameRU: "Государственный герб Республики Узбекистан",
@@ -74,13 +74,13 @@ const SingleComponent = () => {
   };
 
   useEffect(() => {
-    if (id != "flag" && id != "emblem") {
-      if (id != undefined) {
-        getComments()
-        getContent()
-        getStructures()
+    if (id !== "flag" && id !== "emblem") {
+      if (id !== undefined) {
+        getComments();
+        getContent();
+        getStructures();
       } else {
-        navigate("/not-found")
+        navigate("/not-found");
       }
     }
   }, [id]);
@@ -103,15 +103,12 @@ const SingleComponent = () => {
     AxiosCall("get", "/navbar_categories_2/structure/" + lang).then((data) => {
       setTuzilma(data);
     });
-  }
+  };
   const checkCategory = (id) => {
     AxiosCall("get", `/content/${lang}/${id}/1`).then((data) => {
-      if (data.contents.length == 1) {
-        navigate(
-          `/${data.contents[0].id
-          }`
-        );
-      } else if (data.contents.length == 0) {
+      if (data.contents.length === 1) {
+        navigate(`/${data.contents[0].id}`);
+      } else if (data.contents.length === 0) {
         navigate(`/${id}`);
       } else {
         navigate(`/${id}/all`);
@@ -120,9 +117,11 @@ const SingleComponent = () => {
   };
   const dateParser = () => {
     const createdAt = new Date(data.created_at);
-    const formattedDate = `${createdAt.getMonth() + 1}.${createdAt.getDate()}.${createdAt.getFullYear()}`;
-    const formattedTime = `${String(createdAt.getHours()).padStart(2, '0')}:${String(createdAt.getMinutes()).padStart(2, '0')}`;
-    return `${formattedDate}  ${formattedTime}`;
+    const formattedDate = `${
+      createdAt.getMonth() + 1
+    }.${createdAt.getDate()}.${createdAt.getFullYear()}`;
+
+    return `${formattedDate} `;
   };
   return (
     <>
@@ -132,37 +131,40 @@ const SingleComponent = () => {
         visible={modalVisible}
       />
       <section className="sigleComponent">
-        <DynamicMetaTags pageDescription={textContent} pageTitle={data?.title} />
+        <DynamicMetaTags
+          pageDescription={textContent}
+          pageTitle={data?.title}
+        />
         {
           <>
-            {id == "flag" ? (
+            {id === "flag" ? (
               <div className="flag-container">
                 <h1>
-                  {lang == "uz"
+                  {lang === "uz"
                     ? flagInfo.nameUZ
-                    : lang == "en"
-                      ? flagInfo.nameEN
-                      : flagInfo.nameRU}
+                    : lang === "en"
+                    ? flagInfo.nameEN
+                    : flagInfo.nameRU}
                 </h1>
                 <div className="image-container">
                   <img src={flagInfo.image1} alt="flag" />
                 </div>
                 <p>
-                  {lang == "uz"
+                  {lang === "uz"
                     ? flagInfo.contentUZ
-                    : lang == "en"
-                      ? flagInfo.contentEN
-                      : flagInfo.contentRU}
+                    : lang === "en"
+                    ? flagInfo.contentEN
+                    : flagInfo.contentRU}
                 </p>
               </div>
-            ) : id == "emblem" ? (
+            ) : id === "emblem" ? (
               <section className="emblem">
                 <h1>
-                  {lang == "uz"
+                  {lang === "uz"
                     ? emblemInfo.nameUZ
-                    : lang == "en"
-                      ? emblemInfo.nameEN
-                      : emblemInfo.nameRU}
+                    : lang === "en"
+                    ? emblemInfo.nameEN
+                    : emblemInfo.nameRU}
                 </h1>
                 <div className="images">
                   <div className="image-container">
@@ -170,23 +172,25 @@ const SingleComponent = () => {
                   </div>
                 </div>
                 <p>
-                  {lang == "uz"
+                  {lang === "uz"
                     ? emblemInfo.contentUZ
-                    : lang == "en"
-                      ? emblemInfo.contentEN
-                      : emblemInfo.contentRU}
+                    : lang === "en"
+                    ? emblemInfo.contentEN
+                    : emblemInfo.contentRU}
                 </p>
               </section>
             ) : (
               <div className="content-container">
-                {Object.keys(data).length == 0 || data?.title === null || data?.body === "" ? (
+                {Object.keys(data).length === 0 ||
+                data?.title === null ||
+                data?.body === "" ? (
                   <span className="content">
                     <span className="loading-text">
-                      {lang == "uz"
+                      {lang === "uz"
                         ? "Sahifa yangilanmoqda..."
-                        : lang == "ru"
-                          ? "Страница обновляется..."
-                          : "The page is refreshing..."}
+                        : lang === "ru"
+                        ? "Страница обновляется..."
+                        : "The page is refreshing..."}
                     </span>
                   </span>
                 ) : loading ? (
@@ -250,11 +254,11 @@ const SingleComponent = () => {
                 )}
                 <div className="cards-container">
                   <div className="cards1-container">
-                    {lang == "uz" ? (
+                    {lang === "uz" ? (
                       <>
                         <h6>Tuzilma</h6>
                       </>
-                    ) : lang == "en" ? (
+                    ) : lang === "en" ? (
                       <>
                         <h6>Structure</h6>
                       </>
@@ -276,11 +280,11 @@ const SingleComponent = () => {
                   </div>
                   <div className="cards2-container">
                     <h6>
-                      {lang == "uz"
+                      {lang === "uz"
                         ? "Yangiliklar"
-                        : lang == "en"
-                          ? "News"
-                          : "Новости"}
+                        : lang === "en"
+                        ? "News"
+                        : "Новости"}
                     </h6>
                     <div className="cards">
                       {news.map((item, index) => {
@@ -288,24 +292,18 @@ const SingleComponent = () => {
                         const formattedDate = `${(createdAt.getMonth() + 1)
                           .toString()
                           .padStart(2, "0")}.${createdAt
-                            .getDate()
-                            .toString()
-                            .padStart(2, "0")}.${createdAt.getFullYear()}`;
-                        const formattedTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`;
+                          .getDate()
+                          .toString()
+                          .padStart(2, "0")}.${createdAt.getFullYear()}`;
+
                         return (
                           <div
                             key={index}
                             className="my-card1"
-                            onClick={() =>
-                              navigate(
-                                `/${item.id}`
-                              )
-                            }
+                            onClick={() => navigate(`/${item.id}`)}
                           >
                             <div className="textes">
-                              <span className="time">
-                                {formattedDate} {formattedTime}
-                              </span>
+                              <span className="time">{formattedDate}</span>
                               <span className="text">{item.title}</span>
                             </div>
                             <div className="image">
@@ -360,7 +358,7 @@ const SingleComponent = () => {
                       <div className="image">
                         <img
                           src="https://w7.pngwing.com/pngs/753/432/png-transparent-user-profile-2018-in-sight-user-conference-expo-business-default-business-angle-service-people-thumbnail.png"
-                          alt="image"
+                          alt="="
                         />
                       </div>
                       <div className="names-company">
