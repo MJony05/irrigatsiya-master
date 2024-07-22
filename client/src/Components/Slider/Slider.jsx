@@ -58,6 +58,13 @@ const Slider = () => {
       <Carousel nextIcon={nextIcon} prevIcon={prevIcon} className="carousel">
         <Carousel.Item className="carouselItem">
           <img
+            className="fakeImage"
+            alt="nimadir"
+            src={
+              BASE_URL + "/slider/image/8796432c-7993-4ec9-b518-8b818fed8bd3"
+            }
+          />
+          <img
             className="carouselImage"
             alt="nimadir"
             src={
@@ -71,6 +78,13 @@ const Slider = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
+            className="fakeImage"
+            alt="nimadir"
+            src={
+              BASE_URL + "/slider/image/8796432c-7993-4ec9-b518-8b818fed8bd3"
+            }
+          />
+          <img
             className="carouselImage"
             alt="nimadir"
             src={
@@ -83,6 +97,13 @@ const Slider = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
+          <img
+            className="fakeImage"
+            alt="nimadir"
+            src={
+              BASE_URL + "/slider/image/8796432c-7993-4ec9-b518-8b818fed8bd3"
+            }
+          />
           <img
             className="carouselImage"
             alt="nimadir"

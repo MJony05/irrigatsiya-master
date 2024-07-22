@@ -17,6 +17,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AxiosCall, { BASE_URL } from "../AxiosCall/AxiosCall";
 import { StatesContext } from "../../context/GlobalContext";
 import Loading2 from "../Loading/Loading2";
+import { useLocation } from "react-router-dom";
 const Header = () => {
   const [visiblity, setVisiblity] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -34,8 +35,17 @@ const Header = () => {
   const [state, setState] = React.useState({
     top: false,
   });
+  // const { lang, setLang } = useContext(StatesContext);
+  const location = useLocation();
   const { lang, setLang } = useContext(StatesContext);
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const langParam = searchParams.get("lang");
+    if (langParam) {
+      setLang(langParam);
+    }
+  }, []);
   useEffect(() => {
     getCategories();
     getInnerCategories();
@@ -256,6 +266,11 @@ const Header = () => {
       }, 2000);
     }
   };
+  const handleLanguageChange = (value) => {
+    const currentUrlParams = new URLSearchParams(window.location.search);
+    currentUrlParams.set("lang", value);
+    navigate(`${window.location.pathname}?${currentUrlParams.toString()}`);
+  };
   const getLogo = () => {
     AxiosCall("get", "/logo").then((data) => {
       setLogoImage(data);
@@ -447,6 +462,7 @@ const Header = () => {
                                 value={lang}
                                 checked={lang === "uz"}
                                 onChange={() => {
+                                  handleLanguageChange("uz");
                                   localStorage.setItem("ws_l", "uz");
                                   setLang("uz");
                                   window.location.reload();
@@ -469,6 +485,8 @@ const Header = () => {
                                 value={lang}
                                 checked={lang === "en"}
                                 onChange={() => {
+                                  // to params should add lang=en
+                                  handleLanguageChange("en");
                                   localStorage.setItem("ws_l", "en");
                                   setLang("en");
                                   window.location.reload();
@@ -491,6 +509,7 @@ const Header = () => {
                                 value={lang}
                                 checked={lang === "ru"}
                                 onChange={() => {
+                                  handleLanguageChange("ru");
                                   localStorage.setItem("ws_l", "ru");
                                   setLang("ru");
                                   window.location.reload();

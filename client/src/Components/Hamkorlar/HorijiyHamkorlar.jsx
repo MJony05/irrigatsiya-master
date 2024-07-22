@@ -3,14 +3,11 @@ import "./HorijiyHamkorlar.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { StatesContext } from "../../context/GlobalContext";
-import { useNavigate, useParams } from "react-router-dom";
 import AxiosCall from "../AxiosCall/AxiosCall";
 import { BASE_URL } from "./../AxiosCall/AxiosCall";
 const HorijiyHamkorlar = () => {
   const carouselRef = useRef(null);
   const { lang } = useContext(StatesContext);
-  const navigate = useNavigate();
-  const [categoryId, setCategoryId] = useState("");
 
   const [xorijiy, setXorijiy] = useState([]);
 
@@ -59,8 +56,8 @@ const HorijiyHamkorlar = () => {
           responsive={responsive}
           autoPlay
           infinite={true}
-          // autoPlaySpeed={1000}
-          transitionDuration={500}
+          autoPlaySpeed={1000}
+          transitionDuration={1000}
           ref={carouselRef}
           itemClass="carousel-item-padding-40-px"
         >

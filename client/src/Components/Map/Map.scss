@@ -218,8 +218,6 @@
 
                 &:hover {
                   fill: rgba(11, 240, 255, 0.3);
-
-
                 }
 
                 // .hover-card {
@@ -241,9 +239,11 @@
           backdrop-filter: blur(12px);
           transition: 0.3s;
           display: block;
-          background: linear-gradient(158.71deg,
-              hsla(0, 0%, 100%, 0.24) -100%,
-              hsla(0, 0%, 100%, 0));
+          background: linear-gradient(
+            158.71deg,
+            hsla(0, 0%, 100%, 0.24) -100%,
+            hsla(0, 0%, 100%, 0)
+          );
           text-decoration: none;
           color: #fff;
 
@@ -285,9 +285,9 @@
             }
 
             .map_row_col_item_text {
-display: flex;
+              display: flex;
               flex-direction: column;
-align-items: start;
+              align-items: start;
               h2 {
                 font-weight: 500;
                 font-size: 20px;
@@ -295,13 +295,13 @@ align-items: start;
                 margin-bottom: 12px;
                 min-height: 48px;
               }
-              a{
+              a {
                 text-decoration: none;
-                color: #FFF;
+                color: #fff;
               }
-             span{
-               font-size: 15px;
-cursor: pointer;
+              span {
+                font-size: 15px;
+                cursor: pointer;
 
                 &:hover {
                   color: #0dcaf0;
@@ -316,7 +316,7 @@ cursor: pointer;
 
   .hover-card {
     width: 140px;
-    color: #FFF;
+    color: #fff;
     display: flex;
     font-weight: 500;
     font-size: 17px;
@@ -327,18 +327,16 @@ cursor: pointer;
     position: absolute;
     left: 40%;
     top: 30%;
-    border: 1px solid #FFF;
+    border: 1px solid #fff;
 
     // .region-name {}
   }
-
 }
 
 // Mobile devices (portrait)
 @media only screen and (min-width: 200px) and (max-width: 480px) {
   .wrapmap {
     .map {
-
       .map_title {
         h1 {
           font-size: 24px;
@@ -370,24 +368,15 @@ cursor: pointer;
                 margin-bottom: 12px;
                 min-height: 48px;
               }
-
-
             }
 
             .map_row_col_title {
               h1 {
                 font-size: 18px;
-
               }
-
-
             }
-
           }
-
         }
-
-
       }
     }
   }
@@ -397,7 +386,6 @@ cursor: pointer;
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .wrapmap {
     .map {
-
       .map_title {
         h1 {
           font-size: 24px;
@@ -443,15 +431,9 @@ cursor: pointer;
               h1 {
                 font-size: 18px;
               }
-
-
             }
-
           }
-
         }
-
-
       }
     }
   }
@@ -461,7 +443,6 @@ cursor: pointer;
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .wrapmap {
     .map {
-
       .map_title {
         h1 {
           font-size: 24px;
@@ -507,19 +488,14 @@ cursor: pointer;
               h1 {
                 font-size: 18px;
               }
-
-
             }
-
           }
-
         }
-
-
       }
     }
   }
 }
 
 // Desktops, large screens (landscape)
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {}
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+}

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./scss/SingleComponent.scss";
 import AxiosCall, { BASE_URL } from "../../AxiosCall/AxiosCall";
 import Comments from "../../Comments/Comments";

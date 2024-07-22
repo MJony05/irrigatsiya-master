@@ -1337,7 +1337,7 @@ const Map = () => {
             <div className="map_row_col_title">
               {lang == "uz" ? (
                 <h1>Buxoro tabiiy resurslarni boshqarish instituti rektori</h1>
-              ) : lang == "en" ? (
+              ) : lang === "en" ? (
                 <h1>
                   Rector of Bukhara Institute of Natural Resources Management
                 </h1>
@@ -1347,33 +1347,25 @@ const Map = () => {
             </div>
             <div className="map_row_col_item">
               <div className="map_row_col_item_img">
-                <img src={rektor} alt="image" />
+                <img src={rektor} alt="=" />
               </div>
               <div className="map_row_col_item_text">
                 <h2>Imomov Shavkat Jaxonovich</h2>
                 <span className="mt-1">
-                  {lang == "uz" ? (
-                    "Buxoro tabiiy resurslarni boshqarish instituti rektori"
-                  ) : lang == "en" ? (
-                    "Rector of Bukhara Institute of Natural Resources Management"
-                  ) : (
-                    "Ректор Бухарского института природопользования"
-                  )}
+                  {lang === "uz"
+                    ? "Buxoro tabiiy resurslarni boshqarish instituti rektori"
+                    : lang === "en"
+                    ? "Rector of Bukhara Institute of Natural Resources Management"
+                    : "Ректор Бухарского института природопользования"}
                 </span>
                 <span className="mt-1">+998 (65) 228-94-28</span>
                 <span className="mt-1">
-                  {lang == "uz" ? (
-                    <>
-                      Buxoro shahri, Gazli shoh ko‘chasi 32-uy
-                    </>
-                  ) : lang == "en" ? (
-                    <>
-                      Bukhara city, Gazli street 32
-                    </>
+                  {lang === "uz" ? (
+                    <p>Buxoro shahri, Gazli shoh ko‘chasi 32-uy</p>
+                  ) : lang === "en" ? (
+                    <p>Bukhara city, Gazli street 32</p>
                   ) : (
-                    <>
-                      г. Бухара, улица Газли 32.
-                    </>
+                    <p>г. Бухара, улица Газли 32.</p>
                   )}
                 </span>
               </div>
